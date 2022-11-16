@@ -14,7 +14,9 @@ import ListComponent from './components/ListComponent.vue';
     components: { HeaderComponent, ListComponent },
 
     data(){
-        return{store}
+        return{
+            
+        }
     },
     methods: {
     },
