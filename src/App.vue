@@ -1,5 +1,8 @@
 <template>
-    <HeaderComponent/>
+    <header>
+        <HeaderComponent/>
+    </header>
+    
     <main>
     <ListComponent/>
     </main>
@@ -15,10 +18,13 @@ import ListComponent from './components/ListComponent.vue';
 
     data(){
         return{
-            
+
         }
     },
     methods: {
+    },
+    created(){
+
     },
 }
 </script>
@@ -28,6 +34,7 @@ import ListComponent from './components/ListComponent.vue';
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 @import "@fortawesome/fontawesome-free/scss/brands.scss";
 @import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "./assets/styles/generals.scss";
 
 
 

@@ -17,5 +17,6 @@ import ProductComponent from './ProductComponent.vue';
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles/generals.scss";
 
 </style>

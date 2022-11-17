@@ -16,5 +16,6 @@ import { store } from '../store';
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles/generals.scss";
 
 </style>
