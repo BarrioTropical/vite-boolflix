@@ -31,8 +31,8 @@ import ListComponent from './components/ListComponent.vue';
         getMovie(){
             const apiurl = store.baseUrl + store.endpoint;
             const params = store.params;
-            axios.get(apiurl, (params)).then((res) => {
-                //console.log(res.data.results);
+            axios.get(apiurl, {params}).then((res) => {
+                console.log(res.data.results);
                 store.movie = res.data.results;
             })
         }
