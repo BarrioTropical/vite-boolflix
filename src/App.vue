@@ -1,14 +1,13 @@
 <template>
-    <header>
-        <HeaderComponent/>
-    </header>
+    <HeaderComponent/>
     
     <main>
-    <ListComponent/>
+    <ListComponent :items="store.movie"/>
     </main>
 </template>
 
 <script>
+import axios from 'axios';
 import {store} from './store'
 import HeaderComponent from './components/HeaderComponent.vue';
 import ListComponent from './components/ListComponent.vue';
@@ -18,10 +17,25 @@ import ListComponent from './components/ListComponent.vue';
 
     data(){
         return{
-
+            store
+        }
+    },
+    watch:{
+        'store.params.query'(newVal, oldVal){
+            if(newVal !== oldVal){
+                this.getMovie();
+            }
         }
     },
     methods: {
+        getMovie(){
+            const apiurl = store.baseUrl + store.endpoint;
+            const params = store.params;
+            axios.get(apiurl, (params)).then((res) => {
+                //console.log(res.data.results);
+                store.movie = res.data.results;
+            })
+        }
     },
     created(){
 

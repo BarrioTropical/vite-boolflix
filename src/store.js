@@ -11,13 +11,6 @@ export const store = reactive({
         language: 'it-IT',
         include_adult: 'false',
     },
-
-    //listMovie: [],
-
-    //getMostPopular() {
-    //axios.get(this.apiURL).then((res) => {
-
-    //this.listMovie = [...res.data.results];
-    //})
-    //}
+    movie: [],
+    tv: [],
 })
