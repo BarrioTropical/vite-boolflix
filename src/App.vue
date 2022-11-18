@@ -2,7 +2,8 @@
     <HeaderComponent/>
     
     <main>
-    <ListComponent :items="store.movie"/>
+    <ListComponent title="Movies" :items="store.movie"/>
+    <ListComponent title="Series" :items="store.tv"/>
     </main>
 </template>
 
@@ -24,16 +25,26 @@ import ListComponent from './components/ListComponent.vue';
         'store.params.query'(newVal, oldVal){
             if(newVal !== oldVal){
                 this.getMovie();
+                this.getSeries();
             }
         }
     },
     methods: {
         getMovie(){
-            const apiurl = store.baseUrl + store.endpoint;
+            const apiurl = store.baseUrl + store.endpoint.movie;
             const params = store.params;
             axios.get(apiurl, {params}).then((res) => {
                 console.log(res.data.results);
                 store.movie = res.data.results;
+            })
+        },
+
+        getSeries(){
+            const apiurl = store.baseUrl + store.endpoint.tv;
+            const params = store.params;
+            axios.get(apiurl, {params}).then((res) => {
+                console.log(res.data.results);
+                store.tv = res.data.results;
             })
         }
     },

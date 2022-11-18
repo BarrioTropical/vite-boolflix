@@ -1,6 +1,6 @@
 <template>
     <section class="container-fluid">
-    <h2>Movies</h2>
+    <h2>{{title}}</h2>
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5" v-for="(item, index) in items" :key="item.id">
             <ProductComponent :item="item"/>
@@ -11,12 +11,14 @@
 </template>
 
 <script>
+import { stringifyExpression } from '@vue/compiler-core';
 import {store} from '../store'
 import ProductComponent from './ProductComponent.vue';
     export default {
     name: "ListComponent",
     props:{
         items: Array,
+        title: String,
     },
     components: { ProductComponent },
     data() {
