@@ -1,11 +1,13 @@
 <template>
     <div class="media text-center">
-    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/342x513'" alt="item.title">
-        <h4>{{item.original_title}}</h4>
+    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/342x513'" alt="item.title || item.name">
+        <h4>{{item.original_title || item.original_name}}</h4>
         <div>{{item.title}}</div>
-        <div>{{item.vote_average}}</div>
-        
-        <div>{{item.original_language}}</div>
+        <div>
+        <!--<span v-for="n in 5" class="fa-star" :class= "(n<= star) ? 'fa-solid' : 'fa-regular' " ></span>-->
+        {{item.vote_average}}
+        </div>
+        <div>ç{{item.original_language}}</div>
     </div>
 </template>
 
@@ -18,7 +20,12 @@
             return{
             imgBasePath: 'https://image.tmdb.org/t/p/w342'
         }
-        }
+        },
+        computed: {
+            star(){
+                return Math.ceil(this.item.vote.vote_average / 2);
+            }
+        },
     }
 </script>
 
