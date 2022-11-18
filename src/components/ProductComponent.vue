@@ -1,6 +1,6 @@
 <template>
     <div class="media text-center">
-    <img :src="imgBasePath+item.poster_path" alt="item.title">
+    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/342x513'" alt="item.title">
         <h4>{{item.original_title}}</h4>
         <div>{{item.title}}</div>
         <div>{{item.vote_average}}</div>
