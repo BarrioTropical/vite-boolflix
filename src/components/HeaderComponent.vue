@@ -10,7 +10,6 @@ import { store } from "../store";
 import SearchComponent from './SearchComponent.vue';
     export default {
     name: "HeaderComponent",
-    component: {},
     data() {
         return { store };
     },
@@ -21,9 +20,13 @@ import SearchComponent from './SearchComponent.vue';
 <style lang="scss" scoped>
 @import "../assets/styles/generals.scss";
 
-.navbar{
+header{
     border-bottom: 2px solid gray;
     padding: 20px;
+}
+
+h1{
+    color: red;
 }
 
 </style>

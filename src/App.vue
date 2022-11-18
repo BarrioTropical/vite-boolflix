@@ -8,7 +8,7 @@
 
 <script>
 import axios from 'axios';
-import {store} from './store'
+import {store} from './store';
 import HeaderComponent from './components/HeaderComponent.vue';
 import ListComponent from './components/ListComponent.vue';
 

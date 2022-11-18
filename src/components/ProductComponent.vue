@@ -1,9 +1,11 @@
 <template>
     <div class="media text-center">
+    <img :src="imgBasePath+item.poster_path" alt="item.title">
         <h4>{{item.original_title}}</h4>
         <div>{{item.title}}</div>
         <div>{{item.vote_average}}</div>
-        <div>{{item.original_language}}</div> 
+        
+        <div>{{item.original_language}}</div>
     </div>
 </template>
 
@@ -12,14 +14,23 @@
         props:{
             item: Object
         },
+        data(){
+            return{
+            imgBasePath: 'https://image.tmdb.org/t/p/w342'
+        }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/generals.scss";
+div{
+    color: white;
+}
 
 h4{
     text-transform: capitalize;
+    color: white;
 }
 
 img{
