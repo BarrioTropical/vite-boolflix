@@ -34,7 +34,10 @@ section{
     overflow: hidden;
         .row{
             flex-wrap: nowrap;
-            overflow-x: auto;
         }
+}
+
+h2{
+    padding-bottom: 10px;
 }
 </style>

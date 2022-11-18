@@ -68,10 +68,11 @@ import ListComponent from './components/ListComponent.vue';
   top: 0;
   width: 100%;
   background-color: black;
+  z-index: 1000;
 }
 
 main{
-    padding-top: 100px;
+    padding: 130px 20px;
 }
 
 </style>

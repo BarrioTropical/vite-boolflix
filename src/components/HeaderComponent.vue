@@ -23,6 +23,7 @@ import SearchComponent from './SearchComponent.vue';
 header{
     border-bottom: 2px solid gray;
     padding: 20px;
+    z-index: 1000;
 }
 
 h1{
