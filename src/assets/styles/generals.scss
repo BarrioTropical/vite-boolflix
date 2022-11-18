@@ -1,7 +1,11 @@
+@use './partials/variables' as *;
+
+
 @import 'bootstrap/scss/bootstrap';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
+$fa-font-path: './webfonts';
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');

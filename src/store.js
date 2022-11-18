@@ -1,5 +1,7 @@
 import { reactive } from "vue";
 import axios from "axios";
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 export const store = reactive({
     baseUrl: 'https://api.themoviedb.org/3',

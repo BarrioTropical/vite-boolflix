@@ -4,10 +4,13 @@
         <h4>{{item.original_title || item.original_name}}</h4>
         <div>{{item.title}}</div>
         <div>
-        <!--<span v-for="n in 5" class="fa-star" :class= "(n<= star) ? 'fa-solid' : 'fa-regular' " ></span>-->
+        <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
         {{item.vote_average}}
         </div>
-        <div>ç{{item.original_language}}</div>
+        <div class="flag" v-if="availableFlag.includes(item.original_language)">
+            <img :src="'/flags/' + item.original_language +'.png'" :alt="item.original_language + 'Flag'">
+        </div>
+        <div>{{item.original_language}}</div>
     </div>
 </template>
 
@@ -18,12 +21,15 @@
         },
         data(){
             return{
+            availableFlag: [
+                    'de', 'es', 'en','fr', 'it'
+            ],
             imgBasePath: 'https://image.tmdb.org/t/p/w342'
         }
         },
         computed: {
-            star(){
-                return Math.ceil(this.item.vote.vote_average / 2);
+            stars(){
+                return Math.ceil(this.item.vote_average / 2);
             }
         },
     }
@@ -44,5 +50,11 @@ img{
     width: 100%;
     box-shadow: 0 0 6px 3px rgba($color: #000000, $alpha: 0.15);
 }
+
+.flag{
+        img{
+            width: 20px;
+        }
+    }
 
 </style>

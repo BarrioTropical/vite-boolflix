@@ -1,5 +1,7 @@
 <template>
+    <header class="sticky">
     <HeaderComponent/>
+</header>
     
     <main>
     <ListComponent title="Movies" :items="store.movie"/>
@@ -61,6 +63,15 @@ import ListComponent from './components/ListComponent.vue';
 @import "@fortawesome/fontawesome-free/scss/regular.scss";
 @import "./assets/styles/generals.scss";
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+}
 
+main{
+    padding-top: 100px;
+}
 
 </style>
