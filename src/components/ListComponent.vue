@@ -30,5 +30,11 @@ import ProductComponent from './ProductComponent.vue';
 
 <style lang="scss" scoped>
 @import "../assets/styles/generals.scss";
-
+section{
+    overflow: hidden;
+        .row{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+}
 </style>
